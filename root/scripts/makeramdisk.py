@@ -407,6 +407,9 @@ class ramdiskmod():
                 foundsepolicy = True
             else:
                 print("Couldn't find any valid sepolicy file. Aborting....")
+        else:
+            # sepolicy file exists and should be patched
+            foundsepolicy = True
         if foundsepolicy:
             print("- Patching sepolicy")
             self.run(self.BOOTIMG + " magiskpolicy --load " + os.path.join(self.RAMDISK,
